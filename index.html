@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -6,1009 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasquale Vassallo - Ingegnere Informatico</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background: #0a0a0a;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(100px);
-        }
-        
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: #ffffff;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        
-        /* Hero Section */
-        .profile-wrapper {
-        position: relative;
-        width: 350px;
-        height: 350px;
-        }
-
-        .profile-photo {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        overflow: hidden;
-        position: relative;
-        z-index: 2;
-        }
-
-        .profile-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        display: block;
-        }
-
-        /* Glow animato */
-        .glowing-border::before {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: -8px;
-        width: calc(100% + 16px);
-        height: calc(100% + 16px);
-        border-radius: 50%;
-        background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #ffbe0b);
-        background-size: 400% 400%;
-        animation: pulseGlow 6s ease infinite;
-        filter: blur(10px);
-        z-index: -1;
-        }
-
-        @keyframes pulseGlow {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        }
-
-        /* Orbiting icons */
-        .rotating-orbit {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 420px;
-        height: 420px;
-        margin: -210px 0 0 -210px;
-        border-radius: 50%;
-        animation: orbitRotate 20s linear infinite;
-        z-index: 1;
-        }
-
-        .orbit-icon {
-        position: absolute;
-        font-size: 1.4rem;
-        color: #ffffff99;
-        animation: float 3s ease-in-out infinite alternate;
-        }
-
-        .orbit-icon:nth-child(1) {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        }
-
-        .orbit-icon:nth-child(2) {
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        }
-
-        .orbit-icon:nth-child(3) {
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        }
-
-        @keyframes orbitRotate {
-        0%   { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-        }
-
-        @keyframes float {
-        0%   { transform: scale(1); }
-        100% { transform: scale(1.2); }
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            padding: 2rem;
-        }
-
-        .hero-content {
-            z-index: 1;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 4rem;
-            max-width: 1000px;
-            justify-content: center;
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-            text-align: left;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #ff006e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.5s forwards;
-        }
-
-        .hero .subtitle {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #8338ec;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 1s forwards;
-        }
-
-        .hero .description {
-            font-size: 1.2rem;
-            color: #cccccc;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            opacity: 0;
-            animation: fadeInUp 1s ease 1.5s forwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 2s forwards;
-        }
-
-        .btn {
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(255, 0, 110, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-        }
-
-        .btn-secondary:hover {
-            background: #ffffff;
-            color: #0a0a0a;
-            transform: translateY(-3px);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 2.5s forwards;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-link:hover {
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 0, 110, 0.3);
-        }
-
-        .hero-image {
-            flex: 0 0 350px;
-            position: relative;
-        }
-
-        .profile-wrapper {
-            position: relative;
-            width: 350px;
-            height: 350px;
-        }
-
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #333;
-        }
-
-        .rotating-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            height: 400px;
-            transform: translate(-50%, -50%);
-            border: 2px dashed rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            z-index: 1;
-            animation: rotate 20s linear infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .rotating-ring i {
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        @keyframes rotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Sections */
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #ffffff, #ff006e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Experience Cards */
-        .experience-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .experience-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff);
-        }
-        
-        .experience-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(255, 0, 110, 0.2);
-        }
-        
-        .experience-period {
-            color: #8338ec;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .experience-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-        
-        .experience-company {
-            color: #cccccc;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        
-        .experience-description {
-            color: #cccccc;
-            line-height: 1.7;
-        }
-        
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ff006e);
-            animation: spin 4s linear infinite;
-            z-index: -1;
-        }
-        
-        .skill-card::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: rgba(10, 10, 10, 0.95);
-            border-radius: 18px;
-            z-index: -1;
-        }
-        
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .skill-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.4rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            color: #ffffff;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-tag:hover {
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            transform: translateY(-2px);
-        }
-        
-        /* Education Timeline */
-        .education-timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-        
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 2rem;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #ff006e, #8338ec, #3a86ff);
-        }
-        
-        .education-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem 2rem 2rem 5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-        }
-        
-        .education-item::before {
-            content: '';
-            position: absolute;
-            left: -0.8rem;
-            top: 2rem;
-            width: 16px;
-            height: 16px;
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            border-radius: 50%;
-            border: 3px solid #0a0a0a;
-        }
-        
-        .education-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .education-period {
-            color: #8338ec;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .education-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-        
-        .education-institution {
-            color: #cccccc;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
-        .education-details {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-        
-        /* Publications */
-        .publications-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .publication-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .publication-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #3a86ff, #06ffa5);
-        }
-        
-        .publication-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .publication-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            line-height: 1.4;
-        }
-        
-        .publication-authors {
-            color: #3a86ff;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
-        .publication-venue {
-            color: #cccccc;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-        
-        .publication-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #06ffa5;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .publication-link:hover {
-            color: #ffffff;
-            transform: translateX(5px);
-        }
-        
-        /* Conference Cards */
-        .conference-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .conference-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .conference-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #06ffa5, #3a86ff);
-        }
-        
-        .conference-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .conference-date {
-            color: #06ffa5;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .conference-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-        
-        .conference-location {
-            color: #cccccc;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
-        .conference-description {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .contact-info {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-info:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            color: #8338ec;
-        }
-        
-        .contact-text {
-            color: #cccccc;
-        }
-        
-        .contact-text a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-text a:hover {
-            color: #ff006e;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(10, 10, 10, 0.95);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h4 {
-            color: #ffffff;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-section p, .footer-section a {
-            color: #cccccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-section a:hover {
-            color: #ff006e;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            color: #cccccc;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(10, 10, 10, 0.98);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.3s ease;
-                backdrop-filter: blur(20px);
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .mobile-menu {
-                display: flex;
-            }
-            
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-            }
-            
-            .hero-image {
-                flex: none;
-            }
-            
-            .profile-photo {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .education-timeline::before {
-                left: 1rem;
-            }
-            
-            .education-item {
-                padding-left: 3rem;
-            }
-            
-            .education-item::before {
-                left: 0.2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .profile-photo {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .experience-card,
-            .skill-card,
-            .publication-card,
-            .contact-info {
-                padding: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
 </head>
-<body>
+<body data-theme="dark" data-language="it">
     <div class="bg-animation"></div>
     
+    <!-- Theme and Language Toggle -->
+    <div class="theme-controls">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="it">IT</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
     <header>
         <nav class="container">
             <div class="logo">PV</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#experience">Esperienza</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Formazione</a></li>
-                <li><a href="#publications">Pubblicazioni</a></li>
-                <li><a href="#conferences">Conferenze</a></li>
-                <li><a href="#contact">Contatti</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Esperienza</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#education" data-i18n="nav.education">Formazione</a></li>
+                <li><a href="#publications" data-i18n="nav.publications">Pubblicazioni</a></li>
+                <li><a href="#conferences" data-i18n="nav.conferences">Conferenze</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contatti</a></li>
             </ul>
             <div class="mobile-menu">
                 <span></span>
@@ -1021,20 +47,19 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Pasquale Vassallo</h1>
-                <p class="subtitle">Ingegnere Informatico</p>
-                <p class="description">
+                <h1 data-i18n="hero.name">Pasquale Vassallo</h1>
+                <p class="subtitle" data-i18n="hero.title">Ingegnere Informatico</p>
+                <p class="description" data-i18n="hero.description">
                     Laureato in ingegneria informatica, sono una persona dinamica e orientata
                     alla crescita professionale nel campo tecnologico. Mi appassionano le sfide
                     che richiedono logica, creatività e innovazione.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Contattami
+                        <i class="fas fa-envelope"></i> <span data-i18n="hero.contact">Contattami</span>
                     </a>
-
-                    <a href="pdf/download.pdf" class="btn btn-secondary" download>
-                        <i class="fas fa-download"></i> Scarica CV
+                    <a href="#" class="btn btn-secondary" id="downloadCV">
+                        <i class="fas fa-download"></i> <span data-i18n="hero.download">Scarica CV</span>
                     </a>
                 </div>
                 <div class="social-links">
@@ -1061,15 +86,16 @@
 
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Esperienza Lavorativa</h2>
+            <h2 class="section-title fade-in" data-i18n="sections.experience">Esperienza Lavorativa</h2>
             <div class="experience-grid">
                 <div class="experience-card fade-in">
-                    <div class="experience-period">Gen 2025 - in corso</div>
-                    <h3 class="experience-title">Assegnista di Ricerca</h3>
+                    <div class="experience-period" data-i18n="experience.current.period">Gen 2025 - in corso</div>
+                    <h3 class="experience-title" data-i18n="experience.current.title">Assegnista di Ricerca</h3>
                     <div class="experience-company">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem; color:#cf4747;"></i>
-                        Università della Campania Luigi Vanvitelli</div>
-                    <p class="experience-description">
+                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
+                        <span data-i18n="experience.current.company">Università della Campania Luigi Vanvitelli</span>
+                    </div>
+                    <p class="experience-description" data-i18n="experience.current.description">
                         <strong>Progetto FLUENDO:</strong> Ricerca avanzata su tecniche di parallelismo e concorrenza. 
                         Sviluppo di metodologie innovative per la trasformazione automatica di algoritmi sequenziali 
                         in versioni parallele ottimizzate, utilizzando pattern algoritmici e compilatori source-to-source 
@@ -1078,12 +104,13 @@
                 </div>
                 
                 <div class="experience-card fade-in">
-                    <div class="experience-period">Lug 2024 - Dic 2024</div>
-                    <h3 class="experience-title">Studente Tirocinante</h3>
+                    <div class="experience-period" data-i18n="experience.intern.period">Lug 2024 - Dic 2024</div>
+                    <h3 class="experience-title" data-i18n="experience.intern.title">Studente Tirocinante</h3>
                     <div class="experience-company">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem; color:#cf4747;"></i>
-                        Università della Campania Luigi Vanvitelli</div>
-                    <p class="experience-description">
+                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
+                        <span data-i18n="experience.intern.company">Università della Campania Luigi Vanvitelli</span>
+                    </div>
+                    <p class="experience-description" data-i18n="experience.intern.description">
                         <strong>Progetto RASTA:</strong> Realtà Aumentata e Story-Telling Automatizzato per la 
                         valorizzazione di Beni Culturali ed Itinerari. Progettazione e implementazione di soluzioni 
                         innovative per l'integrazione di tecnologie AR nel settore dei beni culturali.
@@ -1095,14 +122,13 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Competenze Tecniche</h2>
+            <h2 class="section-title fade-in" data-i18n="sections.skills">Competenze Tecniche</h2>
             <div class="skills-grid">
-
                 <div class="skill-card fade-in">
                     <div class="skill-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Coding</h3>
+                    <h3 data-i18n="skills.coding.title">Coding</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">C</span>
                         <span class="skill-tag">C++</span>
@@ -1115,7 +141,7 @@
                     <div class="skill-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Web Dev & Database</h3>
+                    <h3 data-i18n="skills.web.title">Web Dev & Database</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">HTML</span>
                         <span class="skill-tag">CSS</span>
@@ -1131,11 +157,11 @@
                     <div class="skill-icon">
                         <i class="fas fa-sitemap"></i>
                     </div>
-                    <h3>Paradigmi di Programmazione</h3>
+                    <h3 data-i18n="skills.paradigms.title">Paradigmi di Programmazione</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Programmazione Parallela</span>
-                        <span class="skill-tag">Concorrenza</span>
-                        <span class="skill-tag">Pattern Algoritmici</span>
+                        <span class="skill-tag" data-i18n="skills.paradigms.parallel">Programmazione Parallela</span>
+                        <span class="skill-tag" data-i18n="skills.paradigms.concurrency">Concorrenza</span>
+                        <span class="skill-tag" data-i18n="skills.paradigms.patterns">Pattern Algoritmici</span>
                     </div>
                 </div>
                 
@@ -1143,14 +169,14 @@
                     <div class="skill-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Cloud Computing - in studio </h3>
+                    <h3 data-i18n="skills.cloud.title">Cloud Computing - in studio</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">AWS</span>
                         <span class="skill-tag">Azure</span>
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">HPC</span>
-                        <span class="skill-tag">Sistemi Distribuiti</span>
+                        <span class="skill-tag" data-i18n="skills.cloud.distributed">Sistemi Distribuiti</span>
                     </div>
                 </div>
                 
@@ -1158,7 +184,7 @@
                     <div class="skill-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>DevOps & Version Control</h3>
+                    <h3 data-i18n="skills.devops.title">DevOps & Version Control</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">GitHub</span>
@@ -1171,13 +197,13 @@
                     <div class="skill-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Data Analysis & AI Tools</h3>
+                    <h3 data-i18n="skills.ai.title">Data Analysis & AI Tools</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">Machine Learning frameworks</span>
+                        <span class="skill-tag" data-i18n="skills.ai.ml">Machine Learning frameworks</span>
                         <span class="skill-tag">scikit-learn</span>
                         <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">AI paradigms</span>
+                        <span class="skill-tag" data-i18n="skills.ai.ai">AI paradigms</span>
                     </div>
                 </div>
             </div>
@@ -1186,39 +212,30 @@
 
     <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Formazione</h2>
+            <h2 class="section-title fade-in" data-i18n="sections.education">Formazione</h2>
             <div class="education-timeline">
                 <div class="education-item fade-in">
-                    <div class="education-period">2024 - In corso</div>
-                    <h3 class="education-title">Laurea Magistrale in Ingegneria Informatica</h3>
+                    <div class="education-period" data-i18n="education.masters.period">2024 - In corso</div>
+                    <h3 class="education-title" data-i18n="education.masters.title">Laurea Magistrale in Ingegneria Informatica</h3>
                     <div class="education-institution">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem; color:#cf4747;"></i>
-                        Università della Campania Luigi Vanvitelli</div>
-                    <div class="education-details">
-                        Curriculum: Sistemi Distribuiti e Cloud Computing<br>
+                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
+                        <span data-i18n="education.masters.institution">Università della Campania Luigi Vanvitelli</span>
+                    </div>
+                    <div class="education-details" data-i18n="education.masters.details">
+                        Curriculum: Sistemi Distribuiti e Cloud Computing
                     </div>
                 </div>
                 
                 <div class="education-item fade-in">
-                    <div class="education-period">2021 - 2024</div>
-                    <h3 class="education-title">Laurea Triennale in Ingegneria Informatica</h3>
+                    <div class="education-period" data-i18n="education.bachelors.period">2021 - 2024</div>
+                    <h3 class="education-title" data-i18n="education.bachelors.title">Laurea Triennale in Ingegneria Informatica</h3>
                     <div class="education-institution">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem; color:#cf4747;"></i>
-                        Università della Campania Luigi Vanvitelli</div>
-                    <div class="education-details">
+                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
+                        <span data-i18n="education.bachelors.institution">Università della Campania Luigi Vanvitelli</span>
+                    </div>
+                    <div class="education-details" data-i18n="education.bachelors.details">
                         Voto: 110/110 con Lode<br>
-                        Tesi: "Realtà virtuale e aumentata collaborativa mediante Intelligenza Artificiale Generativa e deployment su Cloud Continuum"<br><br>
-                        Attività correlate: Questo lavoro mi ha permesso di contribuire ad avanzamenti nel progetto di ricerca RASTA (Realtà Aumentata e Story-Telling Automatizzato per la valorizzazione di Beni Culturali ed Itinerari), di partecipare a conferenze e di pubblicare articoli scientifici<br><br>
-                        <a href="https://doi.org/10.1007/978-3-031-87778-0_13" class="publication-link" style="margin-right: 20px;">
-                            <i class="fas fa-external-link-alt"></i>
-                            Leggi l'articolo
-                        </a>
-
-                        <a href="https://drive.google.com/file/d/16IoTP-Gd1J5pYDSIsdmuarKykv62m0dB/view" class="publication-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            Visualizza demo del progetto
-                        </a>
-
+                        Tesi: "Realtà virtuale e aumentata collaborativa mediante Intelligenza Artificiale Generativa e deployment su Cloud Continuum"
                     </div>
                 </div>
             </div>
@@ -1227,22 +244,24 @@
 
     <section id="publications" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Pubblicazioni</h2>
+            <h2 class="section-title fade-in" data-i18n="sections.publications">Pubblicazioni</h2>
             <div class="publications-grid">
                 <div class="publication-card fade-in">
-                    <h3 class="publication-title">
+                    <h3 class="publication-title" data-i18n="publications.main.title">
                         Designing a Cloud Continuum Architecture for a Collaborative Augmented and Virtual Reality Application in the Cultural Heritage Domain
                     </h3>
-                    <div class="publication-authors">
+                    <div class="publication-authors" data-i18n="publications.main.authors">
                         P. Vassallo, B. Di Martino, G. J. Pezzullo
                     </div>
-                    <div class="publication-venue">
+                    <div class="publication-venue" data-i18n="publications.main.venue">
                         Advanced Information Networking and Applications, L. Barolli, Ed., Cham: Springer Nature Switzerland, 2025, pp. 139–147.
                     </div>
-                    <p> This study presents the design of a methodology supported by a collaborative architecture operating in a cloud-edge environment, capable of deploying virtual reality (VR) and augmented reality (AR) applications and enabling the sharing of operational space and bidirectional interaction between them. The proposed architecture addresses the challenges of integrating VR and AR systems, enabling users in virtual and augmented environments to interact in real time and operate collaboratively within a shared space. The project will design an architecture and define a methodology to operate between VR and AR platforms with different types of interaction. The architecture is also structured to support multiplayer and cross-platform interactions, making it adaptable to various application domains, including collaborative work, education, and entertainment.</p> <br>
+                    <p data-i18n="publications.main.abstract">
+                        This study presents the design of a methodology supported by a collaborative architecture operating in a cloud-edge environment...
+                    </p>
                     <a href="https://doi.org/https://doi.org/10.1007/978-3-031-87778-0_13" class="publication-link">
                         <i class="fas fa-external-link-alt"></i>
-                        Leggi l'articolo
+                        <span data-i18n="publications.read">Leggi l'articolo</span>
                     </a>
                 </div>
             </div>
@@ -1251,49 +270,44 @@
 
     <section id="conferences" class="section">
         <div class="container">
-            <h2 class="section-title fade-in"> Conferenze e Presentazioni</h2>
+            <h2 class="section-title fade-in" data-i18n="sections.conferences">Conferenze e Presentazioni</h2>
             <div class="conference-grid">
-
-            <div class="conference-card fade-in">
-                <div class="conference-date">Luglio 2025</div>
-                <h3 class="conference-title">SWISM@CISIS 2025</h3>
-                <div class="conference-location">
-                <i class="fas fa-map-marker-alt" style="margin-right:0.5rem; color:#cf4747"></i>
-                Fukuoka Institute of Technology (FIT), Fukuoka, Japan.
+                <div class="conference-card fade-in">
+                    <div class="conference-date" data-i18n="conferences.swism.date">Luglio 2025</div>
+                    <h3 class="conference-title" data-i18n="conferences.swism.title">SWISM@CISIS 2025</h3>
+                    <div class="conference-location">
+                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
+                        <span data-i18n="conferences.swism.location">Fukuoka Institute of Technology (FIT), Fukuoka, Japan</span>
+                    </div>
+                    <p class="conference-description" data-i18n="conferences.swism.description">
+                        15th Semantic Web/Cloud Information and Services Discovery and Management (SWISM) colocated with The 19-th International Conference on Complex, Intelligent, and Software Intensive Systems (CISIS).
+                    </p>
                 </div>
-                <p class="conference-description">
-                <i class="fas fa-info-circle" style="margin-right:0.5rem; color:#c49820;"></i>
-                15th Semantic Web/Cloud Information and Services Discovery and Management (SWISM) colocated with The 19-th International Conference on Complex, Intelligent, and Software Intensive Systems (CISIS).
-                </p>
-            </div>
 
-            <div class="conference-card fade-in">
-                <div class="conference-date">Aprile 2025</div>
-                <h3 class="conference-title"> CCPI@AINA 2025 </h3>
-                <div class="conference-location">
-                <i class="fas fa-map-marker-alt" style="margin-right:0.5rem; color:#cf4747;"></i>
-                Open University of Catalonia, Barcelona, Spain.
+                <div class="conference-card fade-in">
+                    <div class="conference-date" data-i18n="conferences.ccpi.date">Aprile 2025</div>
+                    <h3 class="conference-title" data-i18n="conferences.ccpi.title">CCPI@AINA 2025</h3>
+                    <div class="conference-location">
+                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
+                        <span data-i18n="conferences.ccpi.location">Open University of Catalonia, Barcelona, Spain</span>
+                    </div>
+                    <p class="conference-description" data-i18n="conferences.ccpi.description">
+                        16th International Workshop on Cloud-Edge Continuum Projects and Initiatives (CCPI) colocated with the 39th International Conference on Advanced Information Networking and Applications (AINA).
+                    </p>
                 </div>
-                <p class="conference-description">
-                <i class="fas fa-info-circle" style="margin-right:0.5rem; color:#c49820;"></i>
-                16th International Workshop on Cloud-Edge Continuum Projects and Initiatives (CCPI) colocated with the 39th International Conference on Advanced Information Networking and Applications (AINA).
-                </p>
-            </div>
-
             </div>
         </div>
     </section>
 
-
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Contatti</h2>
+            <h2 class="section-title fade-in" data-i18n="sections.contact">Contatti</h2>
             <div class="contact-content">
                 <div class="contact-info fade-in">
-                    <h3 style="color: #ffffff; margin-bottom: 1.5rem;">Puoi trovarmi : </h3>
+                    <h3 data-i18n="contact.find">Puoi trovarmi:</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt contact-icon"></i>
-                        <div class="contact-text">Caserta, Campania, Italia</div>
+                        <div class="contact-text" data-i18n="contact.location">Caserta, Campania, Italia</div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope contact-icon"></i>
@@ -1310,8 +324,8 @@
                 </div>
                 
                 <div class="contact-info fade-in">
-                    <h3 style="color: #ffffff; margin-bottom: 1.5rem;">Collaborazioni</h3>
-                    <p style="color: #cccccc; line-height: 1.6; margin-bottom: 1.5rem;">
+                    <h3 data-i18n="contact.collaborations">Collaborazioni</h3>
+                    <p data-i18n="contact.collaborationText">
                         Sono sempre interessato a nuove collaborazioni di ricerca e progetti innovativi anche in campi mai esplorati.
                     </p>
                     <div class="social-links" style="justify-content: center;">
@@ -1334,86 +348,31 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Pasquale Vassallo</h4>
-                    <p>Studente</p>
-                    <p>Ricercatore</p>
-                    <p>Ingegnere Informatico</p>
+                    <h4 data-i18n="footer.name">Pasquale Vassallo</h4>
+                    <p data-i18n="footer.student">Studente</p>
+                    <p data-i18n="footer.researcher">Ricercatore</p>
+                    <p data-i18n="footer.engineer">Ingegnere Informatico</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Links Utili</h4>
-                    <p><a href="#home">Home</a></p>
-                    <p><a href="#experience">Esperienza</a></p>
-                    <p><a href="#skills">Skills</a></p>
-                    <p><a href="#education">Formazione</a></p>
+                    <h4 data-i18n="footer.links">Links Utili</h4>
+                    <p><a href="#home" data-i18n="nav.home">Home</a></p>
+                    <p><a href="#experience" data-i18n="nav.experience">Esperienza</a></p>
+                    <p><a href="#skills" data-i18n="nav.skills">Skills</a></p>
+                    <p><a href="#education" data-i18n="nav.education">Formazione</a></p>
                 </div>
                 <div class="footer-section">
-                    <h4>Contatti</h4>
+                    <h4 data-i18n="footer.contact">Contatti</h4>
                     <p><a href="mailto:pasquale.vass22@gmail.com">pasquale.vass22@gmail.com</a></p>
                     <p><a href="mailto:pasquale.vassallo@unicampania.it">pasquale.vassallo@unicampania.it</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pasquale Vassallo. Tutti i diritti riservati.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Pasquale Vassallo. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
-            }
-        });
-
-        // Download CV function
-        function downloadCV() {
-            alert('Funzione di download CV non ancora implementata. Contattami per ricevere il CV!');
-        }
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
 </body>
 </html>

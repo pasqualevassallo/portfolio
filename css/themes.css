@@ -1,0 +1,59 @@
+/* Light Theme */
+[data-theme="light"] {
+    --primary-bg: #ffffff;
+    --secondary-bg: rgba(0, 0, 0, 0.05);
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --text-accent: #8338ec;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: rgba(0, 0, 0, 0.03);
+    --header-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] .bg-animation::before {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(50px);
+}
+
+[data-theme="light"] .experience-card,
+[data-theme="light"] .skill-card,
+[data-theme="light"] .publication-card,
+[data-theme="light"] .conference-card,
+[data-theme="light"] .contact-info,
+[data-theme="light"] .education-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .skill-card::after {
+    background: var(--primary-bg);
+}
+
+[data-theme="light"] .education-item::before {
+    border: 3px solid var(--primary-bg);
+}
+
+[data-theme="light"] .social-link {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .skill-tag {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--text-primary);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    background: var(--text-primary);
+    color: var(--primary-bg);
+}
+
+[data-theme="light"] .language-switcher {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
