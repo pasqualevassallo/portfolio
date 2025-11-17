@@ -3,376 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasquale Vassallo - Ingegnere Informatico</title>
+    <title>Pasquale Vassallo | Ingegnere Informatico</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/themes.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-<body data-theme="dark" data-language="it">
-    <div class="bg-animation"></div>
-    
-    <!-- Theme and Language Toggle -->
-    <div class="theme-controls">
-        <button class="theme-toggle" id="themeToggle">
-            <i class="fas fa-moon"></i>
-        </button>
-        <div class="language-switcher">
-            <button class="lang-btn active" data-lang="it">IT</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-        </div>
-    </div>
-
-    <header>
-        <nav class="container">
-            <div class="logo">PV</div>
-            <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                <li><a href="#experience" data-i18n="nav.experience">Esperienza</a></li>
-                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#education" data-i18n="nav.education">Formazione</a></li>
-                <li><a href="#publications" data-i18n="nav.publications">Pubblicazioni</a></li>
-                <li><a href="#conferences" data-i18n="nav.conferences">Conferenze</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">Contatti</a></li>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">PV</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Esperienza</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Formazione</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#publications" class="nav-link">Pubblicazioni</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Progetti</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contatti</a>
+                </li>
             </ul>
-            <div class="mobile-menu">
+            <div class="theme-toggle">
+                <button id="themeSwitch">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 data-i18n="hero.name">Pasquale Vassallo</h1>
-                <p class="subtitle" data-i18n="hero.title">Ingegnere Informatico</p>
-                <p class="description" data-i18n="hero.description">
-                    Laureato in ingegneria informatica, sono una persona dinamica e orientata
-                    alla crescita professionale nel campo tecnologico. Mi appassionano le sfide
-                    che richiedono logica, creatività e innovazione.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> <span data-i18n="hero.contact">Contattami</span>
-                    </a>
-                    <a href="#" class="btn btn-secondary" id="downloadCV">
-                        <i class="fas fa-download"></i> <span data-i18n="hero.download">Scarica CV</span>
-                    </a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Pasquale Vassallo</h1>
+                    <h2 class="hero-subtitle">Ingegnere Informatico & Ricercatore</h2>
+                    <p class="hero-description">
+                        Specializzato in Cloud Computing, Sistemi Distribuiti e Realtà Virtuale/Aumentata. 
+                        Appassionato di tecnologie innovative e ricerca applicata.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Contattami
+                        </a>
+                        <a href="assets/cv.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i> Scarica CV
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/pasqualevassallo" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/pasquale-vassallo" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://scholar.google.com" class="social-link">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="mailto:pasquale.vassallo@email.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/pasqualevassallo" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/pasquale-vassallo/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://instagram.com/pasquale_vass" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-wrapper">
-                    <div class="profile-photo glowing-border">
-                        <img src="images/avatar.png" alt="Foto profilo">
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <img src="images/profile.jpg" alt="Pasquale Vassallo" class="profile-img">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Sono un Ingegnere Informatico specializzato in Sistemi Distribuiti e Cloud Computing. 
+                        Attualmente lavoro come Assegnista di Ricerca presso l'Università della Campania, 
+                        dove mi occupo di progetti innovativi nel campo del Cloud Continuum e della Realtà Virtuale/Aumentata.
+                    </p>
+                    <p>
+                        La mia ricerca si concentra sull'integrazione di tecnologie emergenti per creare 
+                        soluzioni scalabili e efficienti in ambienti distribuiti. Sono appassionato di 
+                        open source e mi piace contribuire a progetti che hanno un impatto positivo sulla comunità.
+                    </p>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Cloud Computing</span>
+                        <span class="skill-tag">Distributed Systems</span>
+                        <span class="skill-tag">VR/AR</span>
+                        <span class="skill-tag">AI/ML</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title fade-in" data-i18n="sections.experience">Esperienza Lavorativa</h2>
-            <div class="experience-grid">
-                <div class="experience-card fade-in">
-                    <div class="experience-period" data-i18n="experience.current.period">Gen 2025 - in corso</div>
-                    <h3 class="experience-title" data-i18n="experience.current.title">Assegnista di Ricerca</h3>
-                    <div class="experience-company">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
-                        <span data-i18n="experience.current.company">Università della Campania Luigi Vanvitelli</span>
-                    </div>
-                    <p class="experience-description" data-i18n="experience.current.description">
-                        <strong>Progetto FLUENDO:</strong> Ricerca avanzata su tecniche di parallelismo e concorrenza. 
-                        Sviluppo di metodologie innovative per la trasformazione automatica di algoritmi sequenziali 
-                        in versioni parallele ottimizzate, utilizzando pattern algoritmici e compilatori source-to-source 
-                        per ambienti cloud e HPC.
-                    </p>
-                </div>
-                
-                <div class="experience-card fade-in">
-                    <div class="experience-period" data-i18n="experience.intern.period">Lug 2024 - Dic 2024</div>
-                    <h3 class="experience-title" data-i18n="experience.intern.title">Studente Tirocinante</h3>
-                    <div class="experience-company">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
-                        <span data-i18n="experience.intern.company">Università della Campania Luigi Vanvitelli</span>
-                    </div>
-                    <p class="experience-description" data-i18n="experience.intern.description">
-                        <strong>Progetto RASTA:</strong> Realtà Aumentata e Story-Telling Automatizzato per la 
-                        valorizzazione di Beni Culturali ed Itinerari. Progettazione e implementazione di soluzioni 
-                        innovative per l'integrazione di tecnologie AR nel settore dei beni culturali.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in" data-i18n="sections.skills">Competenze Tecniche</h2>
-            <div class="skills-grid">
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 data-i18n="skills.coding.title">Coding</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
+            <h2 class="section-title">Esperienza</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 - Presente</div>
+                    <div class="timeline-content">
+                        <h3>Assegnista di Ricerca</h3>
+                        <div class="timeline-place">Università della Campania Luigi Vanvitelli</div>
+                        <p>
+                            Progetto FLUENDO: Ricerca su tecniche di parallelismo e concorrenza per la 
+                            trasformazione automatica di algoritmi sequenziali in versioni parallele ottimizzate.
+                        </p>
+                        <ul class="timeline-tech">
+                            <li>Cloud Computing</li>
+                            <li>HPC</li>
+                            <li>Algorithmic Patterns</li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 data-i18n="skills.web.title">Web Dev & Database</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Apache</span>
-                        <span class="skill-tag">XAMPP</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3 data-i18n="skills.paradigms.title">Paradigmi di Programmazione</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag" data-i18n="skills.paradigms.parallel">Programmazione Parallela</span>
-                        <span class="skill-tag" data-i18n="skills.paradigms.concurrency">Concorrenza</span>
-                        <span class="skill-tag" data-i18n="skills.paradigms.patterns">Pattern Algoritmici</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 data-i18n="skills.cloud.title">Cloud Computing - in studio</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Azure</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">HPC</span>
-                        <span class="skill-tag" data-i18n="skills.cloud.distributed">Sistemi Distribuiti</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 data-i18n="skills.devops.title">DevOps & Version Control</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">GitLab</span>
-                        <span class="skill-tag">CI/CD</span>
-                    </div>
-                </div>
-
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 data-i18n="skills.ai.title">Data Analysis & AI Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag" data-i18n="skills.ai.ml">Machine Learning frameworks</span>
-                        <span class="skill-tag">scikit-learn</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag" data-i18n="skills.ai.ai">AI paradigms</span>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Studente Tirocinante</h3>
+                        <div class="timeline-place">Università della Campania Luigi Vanvitelli</div>
+                        <p>
+                            Progetto RASTA: Realtà Aumentata e Story-Telling Automatizzato per la 
+                            valorizzazione di Beni Culturali ed Itinerari.
+                        </p>
+                        <ul class="timeline-tech">
+                            <li>Augmented Reality</li>
+                            <li>Cloud Architecture</li>
+                            <li>Collaborative Systems</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title fade-in" data-i18n="sections.education">Formazione</h2>
-            <div class="education-timeline">
-                <div class="education-item fade-in">
-                    <div class="education-period" data-i18n="education.masters.period">2024 - In corso</div>
-                    <h3 class="education-title" data-i18n="education.masters.title">Laurea Magistrale in Ingegneria Informatica</h3>
-                    <div class="education-institution">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
-                        <span data-i18n="education.masters.institution">Università della Campania Luigi Vanvitelli</span>
+            <h2 class="section-title">Formazione</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="edu-header">
+                        <h3>Laurea Magistrale in Ingegneria Informatica</h3>
+                        <span class="edu-date">2024 - Presente</span>
                     </div>
-                    <div class="education-details" data-i18n="education.masters.details">
-                        Curriculum: Sistemi Distribuiti e Cloud Computing
+                    <div class="edu-institution">Università della Campania Luigi Vanvitelli</div>
+                    <div class="edu-details">
+                        <p><strong>Curriculum:</strong> Sistemi Distribuiti e Cloud Computing</p>
                     </div>
                 </div>
-                
-                <div class="education-item fade-in">
-                    <div class="education-period" data-i18n="education.bachelors.period">2021 - 2024</div>
-                    <h3 class="education-title" data-i18n="education.bachelors.title">Laurea Triennale in Ingegneria Informatica</h3>
-                    <div class="education-institution">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
-                        <span data-i18n="education.bachelors.institution">Università della Campania Luigi Vanvitelli</span>
+                <div class="education-card">
+                    <div class="edu-header">
+                        <h3>Laurea Triennale in Ingegneria Informatica</h3>
+                        <span class="edu-date">2021 - 2024</span>
                     </div>
-                    <div class="education-details" data-i18n="education.bachelors.details">
-                        Voto: 110/110 con Lode<br>
-                        Tesi: "Realtà virtuale e aumentata collaborativa mediante Intelligenza Artificiale Generativa e deployment su Cloud Continuum"
+                    <div class="edu-institution">Università della Campania Luigi Vanvitelli</div>
+                    <div class="edu-details">
+                        <p><strong>Voto:</strong> 110/110 con Lode</p>
+                        <p><strong>Tesi:</strong> "Realtà virtuale e aumentata collaborativa mediante 
+                        Intelligenza Artificiale Generativa e deployment su Cloud Continuum"</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Publications Section -->
     <section id="publications" class="section">
         <div class="container">
-            <h2 class="section-title fade-in" data-i18n="sections.publications">Pubblicazioni</h2>
-            <div class="publications-grid">
-                <div class="publication-card fade-in">
-                    <h3 class="publication-title" data-i18n="publications.main.title">
-                        Designing a Cloud Continuum Architecture for a Collaborative Augmented and Virtual Reality Application in the Cultural Heritage Domain
-                    </h3>
-                    <div class="publication-authors" data-i18n="publications.main.authors">
-                        P. Vassallo, B. Di Martino, G. J. Pezzullo
-                    </div>
-                    <div class="publication-venue" data-i18n="publications.main.venue">
-                        Advanced Information Networking and Applications, L. Barolli, Ed., Cham: Springer Nature Switzerland, 2025, pp. 139–147.
-                    </div>
-                    <p data-i18n="publications.main.abstract">
-                        This study presents the design of a methodology supported by a collaborative architecture operating in a cloud-edge environment...
-                    </p>
-                    <a href="https://doi.org/https://doi.org/10.1007/978-3-031-87778-0_13" class="publication-link">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span data-i18n="publications.read">Leggi l'articolo</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="conferences" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in" data-i18n="sections.conferences">Conferenze e Presentazioni</h2>
-            <div class="conference-grid">
-                <div class="conference-card fade-in">
-                    <div class="conference-date" data-i18n="conferences.swism.date">Luglio 2025</div>
-                    <h3 class="conference-title" data-i18n="conferences.swism.title">SWISM@CISIS 2025</h3>
-                    <div class="conference-location">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
-                        <span data-i18n="conferences.swism.location">Fukuoka Institute of Technology (FIT), Fukuoka, Japan</span>
-                    </div>
-                    <p class="conference-description" data-i18n="conferences.swism.description">
-                        15th Semantic Web/Cloud Information and Services Discovery and Management (SWISM) colocated with The 19-th International Conference on Complex, Intelligent, and Software Intensive Systems (CISIS).
-                    </p>
-                </div>
-
-                <div class="conference-card fade-in">
-                    <div class="conference-date" data-i18n="conferences.ccpi.date">Aprile 2025</div>
-                    <h3 class="conference-title" data-i18n="conferences.ccpi.title">CCPI@AINA 2025</h3>
-                    <div class="conference-location">
-                        <i class="fas fa-map-marker-alt" style="margin-right:0.5rem;"></i>
-                        <span data-i18n="conferences.ccpi.location">Open University of Catalonia, Barcelona, Spain</span>
-                    </div>
-                    <p class="conference-description" data-i18n="conferences.ccpi.description">
-                        16th International Workshop on Cloud-Edge Continuum Projects and Initiatives (CCPI) colocated with the 39th International Conference on Advanced Information Networking and Applications (AINA).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in" data-i18n="sections.contact">Contatti</h2>
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3 data-i18n="contact.find">Puoi trovarmi:</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt contact-icon"></i>
-                        <div class="contact-text" data-i18n="contact.location">Caserta, Campania, Italia</div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <div class="contact-text">
-                            <a href="mailto:pasquale.vass22@gmail.com">pasquale.vass22@gmail.com</a>
+            <h2 class="section-title">Pubblicazioni</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="pub-header">
+                        <h3 class="pub-title">
+                            Designing a Cloud Continuum Architecture for a Collaborative Augmented and 
+                            Virtual Reality Application in the Cultural Heritage Domain
+                        </h3>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i></a>
+                            <a href="#" class="pub-link"><i class="fas fa-code"></i></a>
                         </div>
                     </div>
+                    <div class="pub-authors">P. Vassallo, B. Di Martino, G. J. Pezzullo</div>
+                    <div class="pub-venue">
+                        Advanced Information Networking and Applications, Springer, 2025
+                    </div>
+                    <div class="pub-abstract">
+                        This study presents the design of a methodology supported by a collaborative 
+                        architecture operating in a cloud-edge environment...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Progetti</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project-rasta.jpg" alt="Progetto RASTA">
+                    </div>
+                    <div class="project-content">
+                        <h3>RASTA</h3>
+                        <p>Realtà Aumentata e Story-Telling Automatizzato per Beni Culturali</p>
+                        <div class="project-tech">
+                            <span>AR</span>
+                            <span>Cloud</span>
+                            <span>AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project-fluendo.jpg" alt="Progetto FLUENDO">
+                    </div>
+                    <div class="project-content">
+                        <h3>FLUENDO</h3>
+                        <p>Framework per la trasformazione automatica di algoritmi sequenziali in paralleli</p>
+                        <div class="project-tech">
+                            <span>HPC</span>
+                            <span>Parallel Computing</span>
+                            <span>Compilers</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contatti</h2>
+            <div class="contact-content">
+                <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <div class="contact-text">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
                             <a href="mailto:pasquale.vassallo@unicampania.it">pasquale.vassallo@unicampania.it</a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="contact-info fade-in">
-                    <h3 data-i18n="contact.collaborations">Collaborazioni</h3>
-                    <p data-i18n="contact.collaborationText">
-                        Sono sempre interessato a nuove collaborazioni di ricerca e progetti innovativi anche in campi mai esplorati.
-                    </p>
-                    <div class="social-links" style="justify-content: center;">
-                        <a href="https://github.com/pasqualevassallo" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/pasquale-vassallo/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://instagram.com/pasquale_vass" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Caserta, Campania, Italia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>Università</h4>
+                            <p>Università della Campania Luigi Vanvitelli</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4 data-i18n="footer.name">Pasquale Vassallo</h4>
-                    <p data-i18n="footer.student">Studente</p>
-                    <p data-i18n="footer.researcher">Ricercatore</p>
-                    <p data-i18n="footer.engineer">Ingegnere Informatico</p>
+                <p>&copy; 2025 Pasquale Vassallo. Tutti i diritti riservati.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
                 </div>
-                <div class="footer-section">
-                    <h4 data-i18n="footer.links">Links Utili</h4>
-                    <p><a href="#home" data-i18n="nav.home">Home</a></p>
-                    <p><a href="#experience" data-i18n="nav.experience">Esperienza</a></p>
-                    <p><a href="#skills" data-i18n="nav.skills">Skills</a></p>
-                    <p><a href="#education" data-i18n="nav.education">Formazione</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4 data-i18n="footer.contact">Contatti</h4>
-                    <p><a href="mailto:pasquale.vass22@gmail.com">pasquale.vass22@gmail.com</a></p>
-                    <p><a href="mailto:pasquale.vassallo@unicampania.it">pasquale.vassallo@unicampania.it</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p data-i18n="footer.copyright">&copy; 2025 Pasquale Vassallo. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/language.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
